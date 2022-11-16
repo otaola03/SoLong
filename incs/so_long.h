@@ -6,7 +6,7 @@
 /*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 13:34:51 by jperez            #+#    #+#             */
-/*   Updated: 2022/11/16 12:59:10 by jperez           ###   ########.fr       */
+/*   Updated: 2022/11/16 19:34:44 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,30 +20,7 @@
 # include<stdio.h>
 # include<unistd.h>
 # include<stdlib.h>
-
-typedef struct s_mem
-{
-	char	**map;
-	int		map_len;
-	int		colect;
-	int		start;
-	int		exit;
-}	t_mem;
-
-typedef struct s_game
-{
-	void	*mlx;
-	void	*win;
-}	t_game;
-
-typedef struct s_img
-{
-	void	*mlx_img;
-	char	*addr;
-	int		bpp;
-	int		line_len;
-	int		endian;
-}	t_img;
+# include"structs.h"
 
 /*----------- END-GAME -----------*/
 void	ft_end_game(t_game *game);
