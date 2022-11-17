@@ -6,7 +6,7 @@
 /*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 18:51:29 by jperez            #+#    #+#             */
-/*   Updated: 2022/11/16 13:12:01 by jperez           ###   ########.fr       */
+/*   Updated: 2022/11/17 14:29:38 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,4 +58,5 @@ void	ft_save_map(char *map_addr, t_mem *mem)
 		mem->map[i++] = str;
 	}
 	close(fd);
+	mem->map[i] = NULL;
 }

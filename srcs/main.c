@@ -6,7 +6,7 @@
 /*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 17:05:21 by jperez            #+#    #+#             */
-/*   Updated: 2022/11/16 19:22:56 by jperez           ###   ########.fr       */
+/*   Updated: 2022/11/17 15:10:04 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int	main(int argc, char **argv)
 	mem = (t_mem *)malloc(sizeof(t_mem));
 	ft_save_map(*(++argv), mem);
 	printf("%d\n", ft_check_map(mem));
+	printf("%d\n", ft_check_path(mem));
 
 
 	/*

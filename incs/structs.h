@@ -6,7 +6,7 @@
 /*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 19:33:17 by jperez            #+#    #+#             */
-/*   Updated: 2022/11/16 19:39:29 by jperez           ###   ########.fr       */
+/*   Updated: 2022/11/17 15:07:40 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,13 +43,14 @@ typedef struct s_node
 {
 	int	i;
 	int	j;
-	int	index;
-	t_node next;
-}
+	struct s_node *prev;
+	struct s_node *next;
+}	t_node;
 
-typedef struct s_peek
+typedef struct s_queue
 {
-	t_node peek;
-}
+	t_node *first;
+	t_node *last;
+} t_queue;
 
 #endif

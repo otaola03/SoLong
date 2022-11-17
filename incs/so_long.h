@@ -6,7 +6,7 @@
 /*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 13:34:51 by jperez            #+#    #+#             */
-/*   Updated: 2022/11/16 19:34:44 by jperez           ###   ########.fr       */
+/*   Updated: 2022/11/17 15:34:45 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,15 @@ void	ft_save_map(char *map_addr, t_mem *mem);
 
 /*----------- CHECK-MAP -----------*/
 char *get_next_line(int fd);
+
+/*----------- CHECK-PATH -----------*/
+int	ft_check_path(t_mem *mem);
+
+/*----------- MANAGE-QUEUE -----------*/
+t_queue	*ft_create_queue();
+t_node	*ft_create_node(int i, int j);
+void	ft_enqueue(t_queue *queue, t_node *node);
+void	ft_dequeue(t_queue *queue);
 
 
 

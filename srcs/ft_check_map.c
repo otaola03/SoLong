@@ -6,7 +6,7 @@
 /*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 17:36:06 by jperez            #+#    #+#             */
-/*   Updated: 2022/11/16 19:29:10 by jperez           ###   ########.fr       */
+/*   Updated: 2022/11/17 14:07:24 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ int	ft_check_map(t_mem *mem)
 
 	mem->exit = 0;
 	mem->entry = 0;
+	mem->collect = 0;
 	line_len = ft_strlen(mem->map[0]);
 	i = -1;
 	while (mem->map[++i])
@@ -58,6 +59,8 @@ int	ft_check_map(t_mem *mem)
 				return (1);
 			ft_update_objects(i, j, mem);
 		}
+		if (j  != line_len)
+			return (1);
 	}
 	if (mem->collect == 0 || mem->exit != 1 || mem->entry != 1)
 		return (1);

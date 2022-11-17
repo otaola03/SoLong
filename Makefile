@@ -6,7 +6,7 @@
 #    By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/12 14:10:40 by jperez            #+#    #+#              #
-#    Updated: 2022/11/14 18:52:29 by jperez           ###   ########.fr        #
+#    Updated: 2022/11/17 15:04:27 by jperez           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,9 +21,9 @@ CFLAGS = -Wall -Werror -Wextra
 RM = -rm -rf
 
 
-SRCS = $Smain.c $Sft_new.c $Sft_end_game.c $Sft_get_next_line.c $Sft_aux.c $Sft_check_map.c $Sft_save_map.c
+SRCS = $Smain.c $Sft_new.c $Sft_end_game.c $Sft_get_next_line.c $Sft_aux.c $Sft_check_map.c $Sft_save_map.c $Sft_check_path.c $Sft_manage_queue.c
 
-OBJS = $Omain.o $Oft_new.o $Oft_end_game.o $Oft_get_next_line.o $Oft_aux.o $Oft_check_map.o $Oft_save_map.o
+OBJS = $Omain.o $Oft_new.o $Oft_end_game.o $Oft_get_next_line.o $Oft_aux.o $Oft_check_map.o $Oft_save_map.o $Oft_check_path.o $Oft_manage_queue.o
 
 F = -fsanitize=address
 
