@@ -6,7 +6,7 @@
 /*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 17:03:32 by jperez            #+#    #+#             */
-/*   Updated: 2022/11/17 14:40:31 by jperez           ###   ########.fr       */
+/*   Updated: 2022/11/17 21:07:25 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,3 +66,17 @@ char	**ft_cpy_matrix(const char **src, size_t map_len, size_t line_len)
 	return (dst);
 }
 */
+
+void	ft_print_map(char **map)
+{
+	int	i;
+	int	j;
+
+	i = -1;
+	while(map[++i])
+	{
+		j = -1;
+		while (map[i][++j])
+			printf("%c", map[i][j]);
+	}
+}

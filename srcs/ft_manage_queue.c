@@ -6,7 +6,7 @@
 /*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 14:44:34 by jperez            #+#    #+#             */
-/*   Updated: 2022/11/17 15:19:44 by jperez           ###   ########.fr       */
+/*   Updated: 2022/11/17 20:41:59 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ t_node	*ft_create_node(int i, int j)
 
 void	ft_enqueue(t_queue *queue, t_node *node)
 {
-	if (queue->first != NULL && queue->last != NULL)
+	if (queue->first == NULL && queue->last == NULL)
 	{
 		queue->first = node;
 		queue->last = node;

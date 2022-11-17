@@ -6,7 +6,7 @@
 /*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 13:34:51 by jperez            #+#    #+#             */
-/*   Updated: 2022/11/17 15:34:45 by jperez           ###   ########.fr       */
+/*   Updated: 2022/11/17 21:06:01 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,11 @@ void	ft_check_game(t_game *game);
 void	ft_new_game(t_game *game);
 void	ft_new_window(t_game *game, int	width, int height);
 
-/*----------- NEW -----------*/
+/*----------- AUX -----------*/
 
 int		ft_strlen(char *str);
 char	*ft_strjoin(char *s1, char *s2);
+void	ft_print_map(char **map);
 
 /*----------- CHECK-MAP -----------*/
 int	ft_check_map(t_mem *mem);
@@ -47,7 +48,7 @@ void	ft_save_map(char *map_addr, t_mem *mem);
 char *get_next_line(int fd);
 
 /*----------- CHECK-PATH -----------*/
-int	ft_check_path(t_mem *mem);
+int	ft_check_path(t_mem *mem, int i, int j);
 
 /*----------- MANAGE-QUEUE -----------*/
 t_queue	*ft_create_queue();
