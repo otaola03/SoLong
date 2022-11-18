@@ -6,7 +6,7 @@
 #    By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/12 14:10:40 by jperez            #+#    #+#              #
-#    Updated: 2022/11/18 13:55:42 by jperez           ###   ########.fr        #
+#    Updated: 2022/11/18 17:44:41 by jperez           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,14 +41,18 @@ $(OBJS): $O%.o: $S%.c
 	$(CC) $(CFLAGS) -Imlx -O3 -c $< -o $@
 
 $(NAME): $(OBJS)
+	$(MAKE) -C mlx 2> logs
+	rm -f logs
 #	$(CC) $(CFLAGS)  $^ -o $(NAME) -Lmlx_linux -lmlx_linux -Imlx_linux -lXext -lX11 -lm -lz
-	$(CC) $(CFLAGS) -Imlx -Lmlx -lmlx -framework OpenGL -framework AppKit -o $(NAME) $(OBJS)
+	$(CC) $(CFLAGS) -I mlx/libmlx.a -Imlx -Lmlx -lmlx -framework OpenGL -framework AppKit -o $(NAME) $(OBJS)
 
 clean:
 	$(RM) $(OBJS) $O
+	$(RM) mlx/*.o
 
 fclean: clean
 	$(RM) $(NAME)
+	$(RM) mlx/libmlx.a
 
 re: fclean all
 
