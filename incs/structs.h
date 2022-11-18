@@ -6,23 +6,13 @@
 /*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 19:33:17 by jperez            #+#    #+#             */
-/*   Updated: 2022/11/17 15:07:40 by jperez           ###   ########.fr       */
+/*   Updated: 2022/11/18 17:49:10 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STRUCTS_H
 
 # define STRUCTS_H
-
-typedef struct s_mem
-{
-	char	**map;
-	int		map_len;
-	int		exit;
-	int		entry;
-	int		collect;
-	int		p_pos[2];
-}	t_mem;
 
 typedef struct s_game
 {
@@ -38,6 +28,17 @@ typedef struct s_img
 	int		line_len;
 	int		endian;
 }	t_img;
+
+typedef struct s_mem
+{
+	char	**map;
+	int		map_len;
+	int		exit;
+	int		entry;
+	int		collect;
+	int		p_pos[2];
+	t_game	*game;
+}	t_mem;
 
 typedef struct s_node
 {
