@@ -6,7 +6,7 @@
 /*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 13:34:51 by jperez            #+#    #+#             */
-/*   Updated: 2022/11/17 21:06:01 by jperez           ###   ########.fr       */
+/*   Updated: 2022/11/18 14:03:00 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,10 @@ t_queue	*ft_create_queue();
 t_node	*ft_create_node(int i, int j);
 void	ft_enqueue(t_queue *queue, t_node *node);
 void	ft_dequeue(t_queue *queue);
+void	ft_free_queue(t_queue *queue);
+
+/*----------- MANAGE-QUEUE -----------*/
+void	ft_general_free(t_mem *mem);
 
 
 

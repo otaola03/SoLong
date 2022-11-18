@@ -6,7 +6,7 @@
 /*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 15:27:56 by jperez            #+#    #+#             */
-/*   Updated: 2022/11/18 13:45:54 by jperez           ###   ########.fr       */
+/*   Updated: 2022/11/18 14:16:05 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,13 +46,11 @@ void	ft_update_neighbours(t_queue *queue, t_mem *mem, int *cont)
 	t_node	*neighbour;
 
 	k = -1;
-	printf("I: %d\nJ: %d\n------------\n", queue->first->i, queue->first->j);
 	while (++k < 4)
 	{
 		neighbour = ft_check_neighbour(queue->first->i, queue->first->j, mem);
 		if (neighbour)
 		{
-			printf("K: %d\ni: %d\nj: %d\n\n", k, neighbour->i, neighbour->j);
 			ft_enqueue(queue, neighbour);
 			if (mem->map[neighbour->i][neighbour->j] == 'C' || mem->map[neighbour->i][neighbour->j] == 'E')
 			{
@@ -79,11 +77,11 @@ int	ft_check_path(t_mem *mem, int i, int j)
 	{
 		ft_update_neighbours(queue, mem, &cont);
 		ft_dequeue(queue);
-		printf("cont: %d\n\n", cont);
-		ft_print_map(mem->map);
-
-		printf("====================\n\n");
 	}
+	ft_print_map(mem->map);
+	if (queue->first)
+		ft_free_queue(queue);
+	free(queue);
 	if (cont == mem->collect + 1)
 		return (0);
 	return (1);

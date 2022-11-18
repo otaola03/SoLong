@@ -6,7 +6,7 @@
 /*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 17:05:21 by jperez            #+#    #+#             */
-/*   Updated: 2022/11/17 21:09:23 by jperez           ###   ########.fr       */
+/*   Updated: 2022/11/18 14:07:42 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ int	main(int argc, char **argv)
 	mem = (t_mem *)malloc(sizeof(t_mem));
 	ft_save_map(*(++argv), mem);
 	printf("%d\n", ft_check_map(mem));
-	printf("p_pos[0]: %d\np_pos[1]: %d\n\n", mem->p_pos[0], mem->p_pos[1]);
 	printf("%d\n", ft_check_path(mem, mem->p_pos[0], mem->p_pos[1]));
+
 
 
 	/*
@@ -37,5 +37,6 @@ int	main(int argc, char **argv)
 	mlx_key_hook(game->win, ft_close_window, game);
 	mlx_loop(game->mlx);
 	*/
+	ft_general_free(mem);
 	return (0);
 }

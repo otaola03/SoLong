@@ -6,7 +6,7 @@
 /*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 14:44:34 by jperez            #+#    #+#             */
-/*   Updated: 2022/11/17 20:41:59 by jperez           ###   ########.fr       */
+/*   Updated: 2022/11/18 14:16:10 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,4 +62,14 @@ void	ft_dequeue(t_queue *queue)
 	else
 		queue->first = NULL;
 	free(aux);
+}
+
+void	ft_free_queue(t_queue *queue)
+{
+	while (queue->last->next)
+	{
+		printf("HOLA\n");
+		ft_dequeue(queue);
+	}
+	ft_dequeue(queue);
 }

@@ -6,7 +6,7 @@
 /*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 17:03:32 by jperez            #+#    #+#             */
-/*   Updated: 2022/11/17 21:07:25 by jperez           ###   ########.fr       */
+/*   Updated: 2022/11/18 13:51:09 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,30 +42,6 @@ char	*ft_strjoin(char *s1, char *s2)
 	output[i] = '\0';
 	return (output);
 }
-
-/*
-char	**ft_cpy_matrix(const char **src, size_t map_len, size_t line_len)
-{
-	char	**dst;
-	int		i;
-	int		j;
-
-	dst = (char **)malloc(sizeof(char *) * (map_len + 1));
-	if (!dst && !src)
-		return (NULL);
-	i = -1;
-	while (src[++i])
-	{
-		src[i] = (char *)malloc(sizeof(char) * (line_len + 1));
-		j = -1;
-		while (src[i][++j])
-		{
-			src[i][j] = 
-		}
-	}
-	return (dst);
-}
-*/
 
 void	ft_print_map(char **map)
 {
