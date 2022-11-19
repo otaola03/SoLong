@@ -6,7 +6,7 @@
 /*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 17:05:21 by jperez            #+#    #+#             */
-/*   Updated: 2022/11/18 17:52:18 by jperez           ###   ########.fr       */
+/*   Updated: 2022/11/19 14:04:28 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,9 @@ int	main(int argc, char **argv)
 		write(1, "Error\n", 6);
 		return (1);
 	}
-	mem->game = (t_game *)malloc(sizeof(t_game));
-	ft_new_game(mem->game);
-	ft_new_window(mem->game, 600, 300);
+	ft_init_game(mem);
+	ft_set_images(mem->game, mem->map);
 	mlx_key_hook(mem->game->win, ft_close_window, mem->game);
-//	mlx_loop(mem->game->mlx);
-	ft_general_free(mem);
+	mlx_loop(mem->game->mlx);
 	return (0);
 }

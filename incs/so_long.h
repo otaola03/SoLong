@@ -6,7 +6,7 @@
 /*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 13:34:51 by jperez            #+#    #+#             */
-/*   Updated: 2022/11/18 14:03:00 by jperez           ###   ########.fr       */
+/*   Updated: 2022/11/19 13:34:02 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ int	ft_close_window(int keycode, void *param);
 void	ft_check_game(t_game *game);
 
 /*----------- NEW -----------*/
-
 void	ft_new_game(t_game *game);
 void	ft_new_window(t_game *game, int	width, int height);
+void	ft_init_game(t_mem *mem);
 
 /*----------- AUX -----------*/
 
@@ -59,6 +59,9 @@ void	ft_free_queue(t_queue *queue);
 
 /*----------- MANAGE-QUEUE -----------*/
 void	ft_general_free(t_mem *mem);
+
+/*----------- SET-IMAGES -----------*/
+int	ft_set_images(t_game *game, char **map);
 
 
 

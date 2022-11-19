@@ -5,10 +5,11 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/16 19:33:17 by jperez            #+#    #+#             */
-/*   Updated: 2022/11/18 17:49:10 by jperez           ###   ########.fr       */
+/*   Created: 2022/11/18 18:26:35 by jperez            #+#    #+#             */
+/*   Updated: 2022/11/19 13:54:32 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #ifndef STRUCTS_H
 
@@ -18,6 +19,7 @@ typedef struct s_game
 {
 	void	*mlx;
 	void	*win;
+	void	*imgs[8];
 }	t_game;
 
 typedef struct s_img
