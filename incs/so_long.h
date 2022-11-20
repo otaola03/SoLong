@@ -6,7 +6,7 @@
 /*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 13:34:51 by jperez            #+#    #+#             */
-/*   Updated: 2022/11/19 13:34:02 by jperez           ###   ########.fr       */
+/*   Updated: 2022/11/20 17:38:24 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,9 @@ void	ft_general_free(t_mem *mem);
 
 /*----------- SET-IMAGES -----------*/
 int	ft_set_images(t_game *game, char **map);
+
+/*----------- KEY-HOOK  -----------*/
+int	ft_key_hook(int keycode, void *param);
 
 
 

@@ -6,7 +6,7 @@
 /*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 15:27:56 by jperez            #+#    #+#             */
-/*   Updated: 2022/11/18 14:16:05 by jperez           ###   ########.fr       */
+/*   Updated: 2022/11/20 19:10:00 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,22 @@ t_node	*ft_check_neighbour(int i, int j, t_mem *mem)
 		return (NULL);
 }
 
-void	ft_update_neighbours(t_queue *queue, t_mem *mem, int *cont)
+void	ft_save_pos(t_mem *mem, t_node *neighbour, int *collect)
+{
+	if (mem->map[neighbour->i][neighbour->j] == 'C')
+	{
+		mem->c_pos[*collect * 2] = neighbour->i;
+		mem->c_pos[(*collect * 2) + 1] = neighbour->j;
+		(*collect)++;
+	}
+	else
+	{
+		mem->e_pos[0] = neighbour->i;
+		mem->e_pos[1] = neighbour->j;
+	}
+}
+
+void	ft_update_neighbours(t_queue *queue, t_mem *mem, int *cont, int *collect)
 {
 	int	k;
 	t_node	*neighbour;
@@ -54,6 +69,7 @@ void	ft_update_neighbours(t_queue *queue, t_mem *mem, int *cont)
 			ft_enqueue(queue, neighbour);
 			if (mem->map[neighbour->i][neighbour->j] == 'C' || mem->map[neighbour->i][neighbour->j] == 'E')
 			{
+				ft_save_pos(mem, neighbour, collect);
 				mem->map[neighbour->i][neighbour->j] += ('a' - 'A');
 				(*cont)++;
 			}
@@ -67,15 +83,18 @@ int	ft_check_path(t_mem *mem, int i, int j)
 {
 	t_queue	*queue;
 	int		cont;
+	int		collect;
 	int		k;
 
 	queue = ft_create_queue();
+	mem->c_pos = (int *)malloc(sizeof(int) * mem->collect * 2);
 	ft_enqueue(queue, ft_create_node(i, j));
 	cont = 0;
+	collect = 0;
 	k = 0;
 	while (queue->first && cont < mem->collect + 1)
 	{
-		ft_update_neighbours(queue, mem, &cont);
+		ft_update_neighbours(queue, mem, &cont, &collect);
 		ft_dequeue(queue);
 	}
 	ft_print_map(mem->map);

@@ -6,7 +6,7 @@
 /*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 17:05:21 by jperez            #+#    #+#             */
-/*   Updated: 2022/11/19 14:04:28 by jperez           ###   ########.fr       */
+/*   Updated: 2022/11/20 17:56:49 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,10 @@ int	main(int argc, char **argv)
 		return (1);
 	}
 	ft_init_game(mem);
+	mem->game->cont = 0;
+	mem->game->exit = 0;
 	ft_set_images(mem->game, mem->map);
-	mlx_key_hook(mem->game->win, ft_close_window, mem->game);
+	mlx_key_hook(mem->game->win, ft_key_hook, mem);
 	mlx_loop(mem->game->mlx);
 	return (0);
 }

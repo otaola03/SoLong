@@ -6,7 +6,7 @@
 /*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 18:26:35 by jperez            #+#    #+#             */
-/*   Updated: 2022/11/19 13:54:32 by jperez           ###   ########.fr       */
+/*   Updated: 2022/11/19 20:59:30 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ typedef struct s_game
 	void	*mlx;
 	void	*win;
 	void	*imgs[8];
+	int		cont;
+	int		exit;
 }	t_game;
 
 typedef struct s_img
@@ -38,6 +40,8 @@ typedef struct s_mem
 	int		exit;
 	int		entry;
 	int		collect;
+	int		*c_pos;
+	int		e_pos[2];
 	int		p_pos[2];
 	t_game	*game;
 }	t_mem;
