@@ -6,7 +6,7 @@
 /*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 17:05:21 by jperez            #+#    #+#             */
-/*   Updated: 2022/11/20 17:56:49 by jperez           ###   ########.fr       */
+/*   Updated: 2022/11/21 20:57:42 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,11 @@ int	main(int argc, char **argv)
 		write(1, "Error\n", 6);
 		return (1);
 	}
+	ft_print_map(mem->map);
 	ft_init_game(mem);
 	mem->game->cont = 0;
 	mem->game->exit = 0;
+	mem->game->movements = 0;
 	ft_set_images(mem->game, mem->map);
 	mlx_key_hook(mem->game->win, ft_key_hook, mem);
 	mlx_loop(mem->game->mlx);

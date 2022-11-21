@@ -6,7 +6,7 @@
 /*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 17:36:06 by jperez            #+#    #+#             */
-/*   Updated: 2022/11/20 17:55:08 by jperez           ###   ########.fr       */
+/*   Updated: 2022/11/21 20:50:24 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	ft_check_walls(int	i, int j, int line_len, t_mem *mem)
 {
 	if (i == 0 && !(mem->map[i][j] == '1' || mem->map[i][j] == '\n'))
 		return (1);
-	else if (i == (mem->map_len -1) &&  !(mem->map[i][j] == '1' || mem->map[i][j] == '\n'))
+	else if (i == (mem->map_len) &&  !(mem->map[i][j] == '1' || mem->map[i][j] == '\n'))
 		return (2);
 	else if ((j == 0 || j == line_len - 2) && mem->map[i][j] != '1')
 		return (3);
@@ -45,21 +45,28 @@ int	ft_check_map(t_mem *mem)
 	int	j;
 	int	line_len;
 
+//	ft_print_map(mem->map);
 	mem->exit = 0;
 	mem->entry = 0;
 	mem->collect = 0;
+	//printf("map_len: %d\n", mem->map_len);
 	line_len = ft_strlen(mem->map[0]);
 	i = -1;
 	while (mem->map[++i])
 	{
 		j = -1;
+//		printf("%s", mem->map[i]);
 		while (mem->map[i][++j])
 		{
 			if (ft_check_walls(i, j, line_len, mem))
+			{
+//				printf("%d\n", ft_check_walls(i, j, line_len, mem));
 				return (1);
+			}
 			ft_update_objects(i, j, mem);
 		}
-		if (j  != line_len)
+	//	printf("I.%d: %d\n", i, j);
+		if ((j != line_len && i != mem->map_len - 1) || (i == mem->map_len - 1 && j != line_len - 1))
 			return (1);
 	}
 	if (mem->collect == 0 || mem->exit != 1 || mem->entry != 1)

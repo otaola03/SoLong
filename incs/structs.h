@@ -6,7 +6,7 @@
 /*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 18:26:35 by jperez            #+#    #+#             */
-/*   Updated: 2022/11/19 20:59:30 by jperez           ###   ########.fr       */
+/*   Updated: 2022/11/21 18:30:46 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ typedef struct s_game
 	void	*imgs[8];
 	int		cont;
 	int		exit;
+	int		movements;
 }	t_game;
 
 typedef struct s_img

@@ -6,7 +6,7 @@
 /*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 18:51:29 by jperez            #+#    #+#             */
-/*   Updated: 2022/11/17 14:29:38 by jperez           ###   ########.fr       */
+/*   Updated: 2022/11/21 20:38:20 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ int	ft_cont_lines(char *addr)
 		if (buff[0] == '\n')	
 			cont++;
 	}
+	cont++;
 	close(fd);
 	return (cont);
 }
@@ -45,7 +46,8 @@ void	ft_save_map(char *map_addr, t_mem *mem)
 	char	*str;
 
 	mem->map_len = ft_cont_lines(map_addr);
-	mem->map = (char **)malloc(sizeof(char *) * (mem->map_len + 1));
+	//mem->map = (char **)malloc(sizeof(char *) * (mem->map_len + 1));
+	mem->map = (char **)malloc(sizeof(char *) * (11110 ));
 	if (!mem->map)
 		exit(-1);
 	fd = open(map_addr, O_RDONLY);

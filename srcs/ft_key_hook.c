@@ -6,7 +6,7 @@
 /*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 20:49:54 by jperez            #+#    #+#             */
-/*   Updated: 2022/11/20 20:04:01 by jperez           ###   ########.fr       */
+/*   Updated: 2022/11/21 18:37:26 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,9 @@ void	ft_move(t_mem *mem, int i, int j, int k)
 	mlx_put_image_to_window(mem->game->mlx, mem->game->win, mem->game->imgs[k], j * 32, i * 32);
 	mem->p_pos[0] = i;
 	mem->p_pos[1] = j;
+	mem->game->movements++;
+	ft_putnbr(mem->game->movements);
+	write(1, "\n", 1);
 }
 
 int	ft_key_hook(int keycode, void *param)
@@ -53,7 +56,6 @@ int	ft_key_hook(int keycode, void *param)
 	t_mem *mem;
 
 	mem = param;
-	printf("collect: %d\ncont: %d\n", mem->collect, mem->game->cont);
 	if (keycode == 0 && mem->map[mem->p_pos[0]][mem->p_pos[1] - 1] != '1')
 		ft_move(mem, mem->p_pos[0], mem->p_pos[1] - 1, 5);
 	else if (keycode == 2 && mem->map[mem->p_pos[0]][mem->p_pos[1] + 1] != '1')
@@ -64,6 +66,5 @@ int	ft_key_hook(int keycode, void *param)
 		ft_move(mem, mem->p_pos[0] + 1, mem->p_pos[1], 7);
 	else if (keycode == 53)
 		ft_end_game(mem->game);
-	printf("cont: %d\n\n",mem->game->cont);
 	return (0);
 }

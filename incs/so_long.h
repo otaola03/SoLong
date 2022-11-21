@@ -6,7 +6,7 @@
 /*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 13:34:51 by jperez            #+#    #+#             */
-/*   Updated: 2022/11/20 17:38:24 by jperez           ###   ########.fr       */
+/*   Updated: 2022/11/21 18:36:13 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,10 @@ void	ft_new_window(t_game *game, int	width, int height);
 void	ft_init_game(t_mem *mem);
 
 /*----------- AUX -----------*/
-
 int		ft_strlen(char *str);
 char	*ft_strjoin(char *s1, char *s2);
 void	ft_print_map(char **map);
+void	ft_putnbr(int n);
 
 /*----------- CHECK-MAP -----------*/
 int	ft_check_map(t_mem *mem);

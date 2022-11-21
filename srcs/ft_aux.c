@@ -6,7 +6,7 @@
 /*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 17:03:32 by jperez            #+#    #+#             */
-/*   Updated: 2022/11/18 13:51:09 by jperez           ###   ########.fr       */
+/*   Updated: 2022/11/21 18:36:53 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,4 +55,27 @@ void	ft_print_map(char **map)
 		while (map[i][++j])
 			printf("%c", map[i][j]);
 	}
+}
+
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
+void	ft_putnbr(int n)
+{
+	if (n < 0)
+	{
+		n = -n;
+		write(1, "-", 1);
+	}
+	if (n == -2147483648)
+		write(1, "2147483648", 10);
+	else if (n >= 10)
+	{
+		ft_putnbr(n / 10);
+		ft_putnbr(n % 10);
+	}
+	else
+		ft_putchar(n % 10 + '0');
 }
