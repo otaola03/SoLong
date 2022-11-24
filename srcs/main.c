@@ -6,7 +6,7 @@
 /*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 17:05:21 by jperez            #+#    #+#             */
-/*   Updated: 2022/11/21 20:57:42 by jperez           ###   ########.fr       */
+/*   Updated: 2022/11/24 18:15:30 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,6 @@ int	main(int argc, char **argv)
 	ft_set_images(mem->game, mem->map);
 	mlx_key_hook(mem->game->win, ft_key_hook, mem);
 	mlx_loop(mem->game->mlx);
+	ft_general_free(mem, 0);
 	return (0);
 }

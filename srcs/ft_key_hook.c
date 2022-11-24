@@ -6,7 +6,7 @@
 /*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 20:49:54 by jperez            #+#    #+#             */
-/*   Updated: 2022/11/21 18:37:26 by jperez           ###   ########.fr       */
+/*   Updated: 2022/11/24 18:22:23 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ int	ft_update_cont(t_mem *mem, int i, int j)
 	else if (mem->map[i][j] == 'e' && mem->game->exit != 1)
 		return (2);
 	else if (mem->map[i][j] == 'e' && mem->game->exit == 1)
-		ft_end_game(mem->game);
+		ft_general_free(mem, 1);
+		//ft_end_game(mem->game);
 	return (0);
 }
 
@@ -65,6 +66,7 @@ int	ft_key_hook(int keycode, void *param)
 	else if (keycode == 1 && mem->map[mem->p_pos[0] + 1][mem->p_pos[1]] != '1')
 		ft_move(mem, mem->p_pos[0] + 1, mem->p_pos[1], 7);
 	else if (keycode == 53)
-		ft_end_game(mem->game);
+		ft_general_free(mem, 1);
+//		ft_end_game(mem->game);
 	return (0);
 }

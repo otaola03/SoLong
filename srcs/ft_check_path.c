@@ -6,7 +6,7 @@
 /*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 15:27:56 by jperez            #+#    #+#             */
-/*   Updated: 2022/11/20 19:10:00 by jperez           ###   ########.fr       */
+/*   Updated: 2022/11/24 18:05:18 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,6 @@ int	ft_check_path(t_mem *mem, int i, int j)
 		ft_update_neighbours(queue, mem, &cont, &collect);
 		ft_dequeue(queue);
 	}
-	ft_print_map(mem->map);
 	if (queue->first)
 		ft_free_queue(queue);
 	free(queue);

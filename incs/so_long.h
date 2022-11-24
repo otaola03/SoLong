@@ -6,7 +6,7 @@
 /*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 13:34:51 by jperez            #+#    #+#             */
-/*   Updated: 2022/11/21 18:36:13 by jperez           ###   ########.fr       */
+/*   Updated: 2022/11/24 18:13:03 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,8 @@ void	ft_dequeue(t_queue *queue);
 void	ft_free_queue(t_queue *queue);
 
 /*----------- MANAGE-QUEUE -----------*/
-void	ft_general_free(t_mem *mem);
+//void	ft_general_free(t_mem *mem);
+void	ft_general_free(t_mem *mem, int on_off);
 
 /*----------- SET-IMAGES -----------*/
 int	ft_set_images(t_game *game, char **map);
