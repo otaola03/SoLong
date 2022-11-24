@@ -6,7 +6,7 @@
 /*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 19:27:42 by jperez            #+#    #+#             */
-/*   Updated: 2022/11/19 14:01:16 by jperez           ###   ########.fr       */
+/*   Updated: 2022/11/24 19:30:12 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,7 @@ void	ft_init_game(t_mem *mem)
 	mem->game = (t_game *)malloc(sizeof(t_game));
 	ft_new_game(mem->game);
 	ft_new_window(mem->game, width *  32, mem->map_len * 32);
+	mem->game->cont = 0;
+	mem->game->exit = 0;
+	mem->game->movements = 0;
 }

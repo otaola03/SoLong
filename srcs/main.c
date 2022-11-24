@@ -6,7 +6,7 @@
 /*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 17:05:21 by jperez            #+#    #+#             */
-/*   Updated: 2022/11/24 18:15:30 by jperez           ###   ########.fr       */
+/*   Updated: 2022/11/24 19:35:16 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,18 @@ int	main(int argc, char **argv)
 		write(1, "Error\n", 6);
 		return (1);
 	}
-	ft_print_map(mem->map);
+	/*
 	ft_init_game(mem);
-	mem->game->cont = 0;
-	mem->game->exit = 0;
-	mem->game->movements = 0;
 	ft_set_images(mem->game, mem->map);
 	mlx_key_hook(mem->game->win, ft_key_hook, mem);
+	mlx_hook(mem->game->win, 17, 1L << 17, ft_press_x, mem);
 	mlx_loop(mem->game->mlx);
-	ft_general_free(mem, 0);
+	*/
+	//ft_general_free(mem, 0);
+	ft_init_game(mem);
+	ft_set_images(mem->game, mem->map);
+	mlx_key_hook(mem->game->win, ft_key_hook, mem);
+	mlx_hook(mem->game->win, 17, 1L << 17, ft_press_x, mem);
+	mlx_loop(mem->game->mlx);
 	return (0);
 }

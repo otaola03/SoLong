@@ -6,7 +6,7 @@
 #    By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/12 14:10:40 by jperez            #+#    #+#              #
-#    Updated: 2022/11/24 18:19:58 by jperez           ###   ########.fr        #
+#    Updated: 2022/11/24 19:26:59 by jperez           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ NAME = so_long
 
 F = -fsanitize=address -g3
 
-CC = gcc $(F)
+CC = gcc 
 CFLAGS = -Wall -Werror -Wextra
 
 RM = -rm -rf
