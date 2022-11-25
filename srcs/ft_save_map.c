@@ -6,7 +6,7 @@
 /*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 18:51:29 by jperez            #+#    #+#             */
-/*   Updated: 2022/11/21 20:38:20 by jperez           ###   ########.fr       */
+/*   Updated: 2022/11/25 19:50:19 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	ft_cont_lines(char *addr)
 		perror("");
 		exit(-1);
 	}
-	cont = 0;
+	cont = 1;
 	read_len = 1;
 	while (read_len)
 	{
@@ -34,7 +34,6 @@ int	ft_cont_lines(char *addr)
 		if (buff[0] == '\n')	
 			cont++;
 	}
-	cont++;
 	close(fd);
 	return (cont);
 }
@@ -46,8 +45,7 @@ void	ft_save_map(char *map_addr, t_mem *mem)
 	char	*str;
 
 	mem->map_len = ft_cont_lines(map_addr);
-	//mem->map = (char **)malloc(sizeof(char *) * (mem->map_len + 1));
-	mem->map = (char **)malloc(sizeof(char *) * (11110 ));
+	mem->map = (char **)malloc(sizeof(char *) * (mem->map_len + 1));
 	if (!mem->map)
 		exit(-1);
 	fd = open(map_addr, O_RDONLY);
@@ -59,6 +57,10 @@ void	ft_save_map(char *map_addr, t_mem *mem)
 		str = get_next_line(fd);
 		mem->map[i++] = str;
 	}
+	//printf("i: %d\n", i);
+//	printf("%s", mem->map[i - 2]);
+	if (mem->map[i - 2][ft_strlen(mem->map[i - 2]) - 1] == '\n')
+		mem->map_len--;
 	close(fd);
-	mem->map[i] = NULL;
+	//mem->map[i] = NULL;
 }
