@@ -6,7 +6,7 @@
 /*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 12:38:42 by jperez            #+#    #+#             */
-/*   Updated: 2022/11/19 13:59:40 by jperez           ###   ########.fr       */
+/*   Updated: 2022/11/26 17:15:02 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,14 @@ void	ft_get_images(t_game *game)
 	int	width;
 	int	height;
 
-	game->imgs[0] = mlx_xpm_file_to_image(game->mlx, "/Users/jperez/Desktop/SoLong/sprites/black_background.xpm", &width, &height);
-	game->imgs[1] = mlx_xpm_file_to_image(game->mlx, "/Users/jperez/Desktop/SoLong/sprites/wall.xpm", &width, &height);
-	game->imgs[2] = mlx_xpm_file_to_image(game->mlx, "/Users/jperez/Desktop/SoLong/sprites/ghost.xpm", &width, &height);
-	game->imgs[3] = mlx_xpm_file_to_image(game->mlx, "/Users/jperez/Desktop/SoLong/sprites/portal.xpm", &width, &height);
-	game->imgs[4] = mlx_xpm_file_to_image(game->mlx, "/Users/jperez/Desktop/SoLong/sprites/pac-man/pac_right.xpm", &width, &height);
-	game->imgs[5] = mlx_xpm_file_to_image(game->mlx, "/Users/jperez/Desktop/SoLong/sprites/pac-man/pac_left.xpm", &width, &height);
-	game->imgs[6] = mlx_xpm_file_to_image(game->mlx, "/Users/jperez/Desktop/SoLong/sprites/pac-man/pac_up.xpm", &width, &height);
-	game->imgs[7] = mlx_xpm_file_to_image(game->mlx, "/Users/jperez/Desktop/SoLong/sprites/pac-man/pac_down.xpm", &width, &height);
+	game->imgs[0] = mlx_xpm_file_to_image(game->mlx, "./sprites/black_background.xpm", &width, &height);
+	game->imgs[1] = mlx_xpm_file_to_image(game->mlx, "./sprites/wall.xpm", &width, &height);
+	game->imgs[2] = mlx_xpm_file_to_image(game->mlx, "./sprites/ghost.xpm", &width, &height);
+	game->imgs[3] = mlx_xpm_file_to_image(game->mlx, "./sprites/portal.xpm", &width, &height);
+	game->imgs[4] = mlx_xpm_file_to_image(game->mlx, "./sprites/pac-man/pac_right.xpm", &width, &height);
+	game->imgs[5] = mlx_xpm_file_to_image(game->mlx, "./sprites/pac-man/pac_left.xpm", &width, &height);
+	game->imgs[6] = mlx_xpm_file_to_image(game->mlx, "./sprites/pac-man/pac_up.xpm", &width, &height);
+	game->imgs[7] = mlx_xpm_file_to_image(game->mlx, "./sprites/pac-man/pac_down.xpm", &width, &height);
 }
 
 int	ft_set_images(t_game *game, char **map)
