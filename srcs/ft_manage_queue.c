@@ -6,15 +6,15 @@
 /*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 14:44:34 by jperez            #+#    #+#             */
-/*   Updated: 2022/11/18 17:52:05 by jperez           ###   ########.fr       */
+/*   Updated: 2022/11/26 17:26:49 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"../incs/so_long.h"
 
-t_queue	*ft_create_queue()
+t_queue	*ft_create_queue(void)
 {
-	t_queue *queue;
+	t_queue	*queue;
 
 	queue = (t_queue *)malloc(sizeof(t_queue));
 	queue->last = NULL;
@@ -24,7 +24,7 @@ t_queue	*ft_create_queue()
 
 t_node	*ft_create_node(int i, int j)
 {
-	t_node *node;
+	t_node	*node;
 
 	node = (t_node *)malloc(sizeof(t_node));
 	node->i = i;
@@ -51,8 +51,8 @@ void	ft_enqueue(t_queue *queue, t_node *node)
 
 void	ft_dequeue(t_queue *queue)
 {
-	t_node *aux;
-	
+	t_node	*aux;
+
 	aux = queue->first;
 	if (aux->prev)
 	{

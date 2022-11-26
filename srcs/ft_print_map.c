@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_end_game.c                                      :+:      :+:    :+:   */
+/*   ft_print_map.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/12 13:48:55 by jperez            #+#    #+#             */
-/*   Updated: 2022/11/26 17:22:33 by jperez           ###   ########.fr       */
+/*   Created: 2022/11/26 17:18:44 by jperez            #+#    #+#             */
+/*   Updated: 2022/11/26 17:27:51 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"../incs/so_long.h"
 
-void	ft_end_game(t_game *game)
+void	ft_print_map(char **map)
 {
-	mlx_destroy_window(game->mlx, game->win);
-	free(game->mlx);
-	free(game);
-	exit(-1);
-}
+	int	i;
+	int	j;
 
-int	ft_close_window(int keycode, void *param)
-{
-	t_game	*game;
-
-	game = param;
-	if (keycode == 53)
-		ft_end_game(game);
-	return (0);
+	i = -1;
+	while (map[++i])
+	{
+		j = -1;
+		while (map[i][++j])
+			printf("%c", map[i][j]);
+	}
 }

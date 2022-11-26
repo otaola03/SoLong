@@ -6,7 +6,7 @@
 /*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 20:49:54 by jperez            #+#    #+#             */
-/*   Updated: 2022/11/24 18:22:23 by jperez           ###   ########.fr       */
+/*   Updated: 2022/11/26 17:25:14 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ int	ft_update_cont(t_mem *mem, int i, int j)
 		return (2);
 	else if (mem->map[i][j] == 'e' && mem->game->exit == 1)
 		ft_general_free(mem, 1);
-		//ft_end_game(mem->game);
 	return (0);
 }
 
@@ -35,16 +34,19 @@ void	ft_move(t_mem *mem, int i, int j, int k)
 	int	status;
 
 	status = ft_update_cont(mem, i, j);
-	mlx_put_image_to_window(mem->game->mlx, mem->game->win, mem->game->imgs[0],\
+	mlx_put_image_to_window(mem->game->mlx, mem->game->win, mem->game->imgs[0], \
 		mem->p_pos[1] * 32, mem->p_pos[0] * 32);
 	if (mem->map[mem->p_pos[0]][mem->p_pos[1]] == 'e')
-		mlx_put_image_to_window(mem->game->mlx, mem->game->win, mem->game->imgs[3],\
-			mem->p_pos[1] * 32, mem->p_pos[0] * 32);
+		mlx_put_image_to_window(mem->game->mlx, mem->game->win, \
+		mem->game->imgs[3], mem->p_pos[1] * 32, mem->p_pos[0] * 32);
 	if (status == 1)
-		mlx_put_image_to_window(mem->game->mlx, mem->game->win, mem->game->imgs[0], j * 32, i * 32);
+		mlx_put_image_to_window(mem->game->mlx, mem->game->win, \
+		mem->game->imgs[0], j * 32, i * 32);
 	else if (status == 2)
-		mlx_put_image_to_window(mem->game->mlx, mem->game->win, mem->game->imgs[3], j * 32, i * 32);
-	mlx_put_image_to_window(mem->game->mlx, mem->game->win, mem->game->imgs[k], j * 32, i * 32);
+		mlx_put_image_to_window(mem->game->mlx, mem->game->win, \
+		mem->game->imgs[3], j * 32, i * 32);
+	mlx_put_image_to_window(mem->game->mlx, mem->game->win, \
+		mem->game->imgs[k], j * 32, i * 32);
 	mem->p_pos[0] = i;
 	mem->p_pos[1] = j;
 	mem->game->movements++;
@@ -54,7 +56,7 @@ void	ft_move(t_mem *mem, int i, int j, int k)
 
 int	ft_key_hook(int keycode, void *param)
 {
-	t_mem *mem;
+	t_mem	*mem;
 
 	mem = param;
 	if (keycode == 0 && mem->map[mem->p_pos[0]][mem->p_pos[1] - 1] != '1')
@@ -67,6 +69,5 @@ int	ft_key_hook(int keycode, void *param)
 		ft_move(mem, mem->p_pos[0] + 1, mem->p_pos[1], 7);
 	else if (keycode == 53)
 		ft_general_free(mem, 1);
-//		ft_end_game(mem->game);
 	return (0);
 }

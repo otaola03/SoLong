@@ -6,7 +6,7 @@
 /*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 17:05:21 by jperez            #+#    #+#             */
-/*   Updated: 2022/11/25 19:50:42 by jperez           ###   ########.fr       */
+/*   Updated: 2022/11/26 17:33:13 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,17 @@
 
 int	main(int argc, char **argv)
 {
-	t_mem *mem;
+	t_mem	*mem;
 
 	if (argc != 2)
 		return (1);
 	mem = (t_mem *)malloc(sizeof(t_mem));
 	ft_save_map(*(++argv), mem);
-	/*
-	printf("map: %d\n", ft_check_map(mem));
-	//printf("path: %d\n", ft_check_path(mem, mem->p_pos[0], mem->p_pos[1]));
-	*/
 	if (ft_check_map(mem) || ft_check_path(mem, mem->p_pos[0], mem->p_pos[1]))
 	{
 		write(1, "Error\n", 6);
 		return (1);
 	}
-	//ft_print_map(mem->map);
 	ft_init_game(mem);
 	ft_set_images(mem->game, mem->map);
 	mlx_key_hook(mem->game->win, ft_key_hook, mem);

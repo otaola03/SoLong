@@ -6,7 +6,7 @@
 /*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 18:51:29 by jperez            #+#    #+#             */
-/*   Updated: 2022/11/25 19:50:19 by jperez           ###   ########.fr       */
+/*   Updated: 2022/11/26 17:28:38 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	ft_cont_lines(char *addr)
 	{
 		read_len = read(fd, buff, 1);
 		buff[read_len] = '\0';
-		if (buff[0] == '\n')	
+		if (buff[0] == '\n')
 			cont++;
 	}
 	close(fd);
@@ -52,15 +52,12 @@ void	ft_save_map(char *map_addr, t_mem *mem)
 	i = 0;
 	str = get_next_line(fd);
 	mem->map[i++] = str;
-	while(str)
+	while (str)
 	{
 		str = get_next_line(fd);
 		mem->map[i++] = str;
 	}
-	//printf("i: %d\n", i);
-//	printf("%s", mem->map[i - 2]);
 	if (mem->map[i - 2][ft_strlen(mem->map[i - 2]) - 1] == '\n')
 		mem->map_len--;
 	close(fd);
-	//mem->map[i] = NULL;
 }

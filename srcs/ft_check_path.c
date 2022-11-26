@@ -6,7 +6,7 @@
 /*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 15:27:56 by jperez            #+#    #+#             */
-/*   Updated: 2022/11/24 18:05:18 by jperez           ###   ########.fr       */
+/*   Updated: 2022/11/26 17:22:16 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,9 +55,10 @@ void	ft_save_pos(t_mem *mem, t_node *neighbour, int *collect)
 	}
 }
 
-void	ft_update_neighbours(t_queue *queue, t_mem *mem, int *cont, int *collect)
+void	ft_update_neighbours(t_queue *queue, t_mem *mem, int *cont, \
+	int *collect)
 {
-	int	k;
+	int		k;
 	t_node	*neighbour;
 
 	k = -1;
@@ -67,7 +68,8 @@ void	ft_update_neighbours(t_queue *queue, t_mem *mem, int *cont, int *collect)
 		if (neighbour)
 		{
 			ft_enqueue(queue, neighbour);
-			if (mem->map[neighbour->i][neighbour->j] == 'C' || mem->map[neighbour->i][neighbour->j] == 'E')
+			if (mem->map[neighbour->i][neighbour->j] == 'C' || \
+				mem->map[neighbour->i][neighbour->j] == 'E')
 			{
 				ft_save_pos(mem, neighbour, collect);
 				mem->map[neighbour->i][neighbour->j] += ('a' - 'A');

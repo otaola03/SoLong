@@ -6,7 +6,7 @@
 /*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 13:31:19 by jperez            #+#    #+#             */
-/*   Updated: 2022/11/21 20:34:06 by jperez           ###   ########.fr       */
+/*   Updated: 2022/11/26 17:22:46 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,9 +49,6 @@ char	*get_next_line(int fd)
 			break ;
 	}
 	if ((!buf[i - 1] && !rd) || rd == -1)
-	{
-		
 		return (ft_check_str(buf));
-	}
 	return (buf);
 }

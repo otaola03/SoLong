@@ -6,7 +6,7 @@
 /*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 17:03:32 by jperez            #+#    #+#             */
-/*   Updated: 2022/11/21 18:36:53 by jperez           ###   ########.fr       */
+/*   Updated: 2022/11/26 17:19:03 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,20 +41,6 @@ char	*ft_strjoin(char *s1, char *s2)
 		output[i++] = s2[j++];
 	output[i] = '\0';
 	return (output);
-}
-
-void	ft_print_map(char **map)
-{
-	int	i;
-	int	j;
-
-	i = -1;
-	while(map[++i])
-	{
-		j = -1;
-		while (map[i][++j])
-			printf("%c", map[i][j]);
-	}
 }
 
 void	ft_putchar(char c)

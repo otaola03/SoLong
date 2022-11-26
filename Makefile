@@ -6,7 +6,7 @@
 #    By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/12 14:10:40 by jperez            #+#    #+#              #
-#    Updated: 2022/11/24 19:26:59 by jperez           ###   ########.fr        #
+#    Updated: 2022/11/26 17:35:18 by jperez           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,9 +23,9 @@ CFLAGS = -Wall -Werror -Wextra
 RM = -rm -rf
 
 
-SRCS = $Smain.c $Sft_new.c $Sft_end_game.c $Sft_get_next_line.c $Sft_aux.c $Sft_check_map.c $Sft_save_map.c $Sft_check_path.c $Sft_manage_queue.c $Sft_general_free.c $Sft_set_images.c $Sft_key_hook.c
+SRCS = $Smain.c $Sft_init_map.c $Sft_end_game.c $Sft_get_next_line.c $Sft_aux.c $Sft_check_map.c $Sft_save_map.c $Sft_check_path.c $Sft_manage_queue.c $Sft_general_free.c $Sft_set_images.c $Sft_key_hook.c $Sft_print_map.c
 
-OBJS = $Omain.o $Oft_new.o $Oft_end_game.o $Oft_get_next_line.o $Oft_aux.o $Oft_check_map.o $Oft_save_map.o $Oft_check_path.o $Oft_manage_queue.o $Oft_general_free.o $Oft_set_images.o $Oft_key_hook.o
+OBJS = $Omain.o $Oft_init_map.o $Oft_end_game.o $Oft_get_next_line.o $Oft_aux.o $Oft_check_map.o $Oft_save_map.o $Oft_check_path.o $Oft_manage_queue.o $Oft_general_free.o $Oft_set_images.o $Oft_key_hook.o $Oft_print_map.o
 
 all: $(NAME)
 
