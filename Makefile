@@ -6,14 +6,12 @@
 #    By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/12 14:10:40 by jperez            #+#    #+#              #
-#    Updated: 2022/11/28 19:37:19 by jperez           ###   ########.fr        #
+#    Updated: 2022/11/28 19:39:44 by jperez           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 define HEADER
-
-
 ░░░░░██╗██████╗░███████╗██████╗░███████╗███████╗
 ░░░░░██║██╔══██╗██╔════╝██╔══██╗██╔════╝╚════██║
 ░░░░░██║██████╔╝█████╗░░██████╔╝█████╗░░░░███╔═╝
@@ -60,8 +58,8 @@ $(NAME): $(OBJS)
 #	$(CC) $(CFLAGS)  $^ -o $(NAME) -Lmlx_linux -lmlx_linux -Imlx_linux -lXext -lX11 -lm -lz
 	$(CC) $(CFLAGS) -I mlx/libmlx.a -Imlx -Lmlx -lmlx -framework OpenGL -framework AppKit -o $(NAME) $(OBJS)
 #	$(CC) $(CFLAGS) -I mlx/libmlx.dylib -Imlx -Lmlx -lmlx -framework OpenGL -framework AppKit -o $(NAME) $(OBJS)
-	echo "\033[0;33m"
-	echo "$$HEADER"
+	@echo "\033[0;33m"
+	@echo "$$HEADER"
 
 clean:
 	$(RM) $(OBJS) $O
