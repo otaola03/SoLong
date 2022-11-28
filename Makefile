@@ -6,7 +6,7 @@
 #    By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/12 14:10:40 by jperez            #+#    #+#              #
-#    Updated: 2022/11/26 17:35:18 by jperez           ###   ########.fr        #
+#    Updated: 2022/11/28 18:02:34 by jperez           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,9 +15,9 @@ O = objs/
 
 NAME = so_long
 
-F = -fsanitize=address -g3
+#F = -fsanitize=address -g3
 
-CC = gcc 
+CC = gcc -O3$(F) 
 CFLAGS = -Wall -Werror -Wextra
 
 RM = -rm -rf

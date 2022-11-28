@@ -6,7 +6,7 @@
 /*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 13:34:51 by jperez            #+#    #+#             */
-/*   Updated: 2022/11/26 17:26:13 by jperez           ###   ########.fr       */
+/*   Updated: 2022/11/28 18:26:03 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
 
 /*----------- END-GAME -----------*/
 void	ft_end_game(t_game *game);
-int	ft_close_window(int keycode, void *param);
+int		ft_close_window(int keycode, void *param);
 
 /*----------- CHECK_GAME -----------*/
 void	ft_check_game(t_game *game);
@@ -39,16 +39,17 @@ int		ft_strlen(char *str);
 char	*ft_strjoin(char *s1, char *s2);
 void	ft_print_map(char **map);
 void	ft_putnbr(int n);
+int		ft_strnstr(char *haystack, char *needle, size_t len);
 
 /*----------- CHECK-MAP -----------*/
-int	ft_check_map(t_mem *mem);
-void	ft_save_map(char *map_addr, t_mem *mem);
+int		ft_check_map(t_mem *mem);
+int		ft_save_map(char *map_addr, t_mem *mem);
 
 /*----------- CHECK-MAP -----------*/
-char *get_next_line(int fd);
+char	*get_next_line(int fd);
 
 /*----------- CHECK-PATH -----------*/
-int	ft_check_path(t_mem *mem, int i, int j);
+int		ft_check_path(t_mem *mem, int i, int j);
 
 /*----------- MANAGE-QUEUE -----------*/
 t_queue	*ft_create_queue(void);
@@ -59,13 +60,13 @@ void	ft_free_queue(t_queue *queue);
 
 /*----------- GENERAL-FREE -----------*/
 void	ft_general_free(t_mem *mem, int on_off);
-int	ft_press_x(t_mem *mem);
+int		ft_press_x(t_mem *mem);
 
 /*----------- SET-IMAGES -----------*/
-int	ft_set_images(t_game *game, char **map);
+int		ft_set_images(t_game *game, char **map);
 
 /*----------- KEY-HOOK  -----------*/
-int	ft_key_hook(int keycode, void *param);
+int		ft_key_hook(int keycode, void *param);
 
 
 

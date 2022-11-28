@@ -6,7 +6,7 @@
 /*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 17:03:32 by jperez            #+#    #+#             */
-/*   Updated: 2022/11/26 17:19:03 by jperez           ###   ########.fr       */
+/*   Updated: 2022/11/28 18:27:36 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,4 +64,26 @@ void	ft_putnbr(int n)
 	}
 	else
 		ft_putchar(n % 10 + '0');
+}
+
+int	ft_strnstr(char *haystack, char *needle, size_t len)
+{
+	size_t	i;
+	size_t	j;
+
+	if (*needle == (char) NULL)
+		return (1);
+	i = 0;
+	while (haystack[i] && i < len)
+	{
+		j = 0;
+		while (haystack[i + j] == needle[j] && i + j < len)
+		{
+			if (needle[j + 1] == '\0' && haystack[i + j + 1] == '\0')
+				return (0);
+			j++;
+		}
+		i++;
+	}
+	return (1);
 }
